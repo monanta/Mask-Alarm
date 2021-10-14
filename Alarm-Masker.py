@@ -100,7 +100,7 @@ maskNet = load_model(args["model"])
 
 # inisialisasi aliran video dan biarkan sensor kamera siap
 print("[INFO] starting video stream...")
-vs = VideoStream(src=1).start()
+vs = VideoStream(src=0).start()
 time.sleep(2.0)
 
 # loop over the frames dari video stream
@@ -192,7 +192,7 @@ def keluarkansuara(frame, pred):
             # playsound('audio3.wav')
             # print('playing sound using  playsound')
             memotret(frame)
-            file = "audio3.wav"
+            file = "masker.mp3"
             os.system("" + file)
         
 
@@ -203,13 +203,13 @@ while True:
         frame, pred = mendeteksi()
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
-        time.sleep(0.5)
         keluarkansuara(frame, pred)
+        time.sleep(0.7)
     except:
         frame = mendeteksi2()
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
-        time.sleep(0.5)
+        time.sleep(0.7)
 
     
     	

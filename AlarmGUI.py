@@ -201,7 +201,7 @@ def menubar():
     window.config(menu=menubar)
 
 # menubar()
-btn_snapshot=tkinter.Button(window, text="Snapshot", width=30, command=mulai)
+btn_snapshot=tkinter.Button(window, text="Stop", width=30, command=mulai)
 btn_tangkapan=tkinter.Button(window, text="Buka Tangkapan Gambar", width=30, command=tangkapan)
 
 mulai()

@@ -19,6 +19,7 @@ class App:
     def __init__(self, window, window_title, video_source=0):
         self.window = window
         self.window.title(window_title)
+        self.window.wm_iconbitmap('logobps.ico')
         self.video_source = video_source
 
         # buka sumber video (secara default ini akan mencoba membuka webcam komputer)
@@ -54,9 +55,9 @@ class App:
         time.sleep(2.0)
 
         # Tombol yang memungkinkan pengguna mengambil snapshot
-        self.btn_snapshot=tkinter.Button(window, text="Snapshot", width=50, command=self.memotret)
+        self.btn_snapshot=tkinter.Button(window, text="Mulai", width=50, command=self.memotret)
         self.btn_snapshot.pack(anchor=tkinter.CENTER, expand=True)
-        self.btn_snapshot=tkinter.Button(window, text="Mulai", width=50, command=self.mulai)
+        self.btn_snapshot=tkinter.Button(window, text="Buka Tangkapan Gambar", width=50, command=self.mulai)
         self.btn_snapshot.pack(anchor=tkinter.CENTER, expand=True)
 
         # threading.Timer(2, self.update(faceNet, maskNet)).start()
@@ -236,4 +237,4 @@ class MyVideoCapture:
 
 
 # Create a window and pass it to the Application object
-App(tkinter.Tk(), "Tkinter and OpenCV")
+App(tkinter.Tk(), "Alarm Masker")
